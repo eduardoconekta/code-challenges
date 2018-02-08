@@ -1,4 +1,3 @@
-
 class BigSort(object):
   def numeric_validation(self, obj ):
     for number in obj:
