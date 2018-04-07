@@ -51,3 +51,4 @@ t = int(raw_input())
 if  1 <= t <= 100:
     solution(t)
 
+
