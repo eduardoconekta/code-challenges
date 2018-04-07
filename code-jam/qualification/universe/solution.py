@@ -1,8 +1,4 @@
 import fileinput, sys
-from time import sleep
-
-def read():
-    return [s for s in raw_input().split(" ")]
 
 def getDamageWithoutSwap(damage, p):
     strenght = 1
@@ -12,7 +8,6 @@ def getDamageWithoutSwap(damage, p):
         if j == 'S':
            damage = damage - strenght
     return damage
-
 
 def getDamageSwaped(damage, p):
     only_s = True
@@ -53,4 +48,3 @@ f = fileinput.input()
 t = int(f.readline())
 if  1 <= t <= 100:
     solution(t)
-
