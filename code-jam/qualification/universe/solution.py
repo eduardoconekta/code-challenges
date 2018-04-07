@@ -1,7 +1,4 @@
-import sys
-
-def read():
-    return [s for s in raw_input().split(" ")]    
+import fileinput, sys
 
 def getDamageWithoutSwap(damage, p):
     strenght = 1
@@ -37,18 +34,17 @@ def getDamageSwaped(damage, p):
 
 def solution(t):
     for i in range(0, t ):
-        content = read()
-        d = int(content[0])
-        p = content[1]
+        content = f.readline().strip()
+        d = int(content.split(' ')[0])
+        p = content.split(' ')[1]
         if not 1 <= d <= 10**9:
             continue
         if  not 2 <= len(p) <= 30:
             continue
-        print("Case #{}: {}").format(i+1, getDamageSwaped(d, p))    
-    sys.exit()
+        print("Case #{}: {}").format(i+1, getDamageSwaped(d, p))
+    return sys.exit()
 
-t = int(raw_input())
+f = fileinput.input()
+t = int(f.readline())
 if  1 <= t <= 100:
     solution(t)
-
-
