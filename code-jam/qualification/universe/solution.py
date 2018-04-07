@@ -1,9 +1,6 @@
 import fileinput, sys
 from time import sleep
 
-def read():
-    return [s for s in raw_input().split(" ")]
-
 def getDamageWithoutSwap(damage, p):
     strenght = 1
     for j in p:
