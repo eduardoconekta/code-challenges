@@ -1,10 +1,7 @@
 import sys
 
 def read():
-    file_name = sys.argv[1]
-    fp = open(file_name)
-    contents = fp.read()
-    return contents
+    return [s for s in raw_input().split(" ")]    
 
 def getDamageWithoutSwap(damage, p):
     strenght = 1
@@ -38,21 +35,20 @@ def getDamageSwaped(damage, p):
         return 0
     return hacks
 
-def solution(x):
-    br = x.split("\n")[1:]
-    for i,row in enumerate(br,1):
-        d = int(row.split(" ")[0])
-        p = row.split(" ")[1]
+def solution(t):
+    for i in range(0, t ):
+        content = read()
+        d = int(content[0])
+        p = content[1]
         if not 1 <= d <= 10**9:
             continue
         if  not 2 <= len(p) <= 30:
             continue
-        
-        print("Case #{}: {}").format(i, getDamageSwaped(d, p))
-    return 
+        print("Case #{}: {}").format(i+1, getDamageSwaped(d, p))    
+    sys.exit()
 
-content = read()
-t = int(content[0])
+t = int(raw_input())
 if  1 <= t <= 100:
-    solution(content[1:])
+    solution(t)
+
 
