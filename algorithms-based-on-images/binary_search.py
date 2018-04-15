@@ -1,4 +1,4 @@
-from time import sleep
+
 class BinarySort(object):
   def sort(self, obj, key):
     mid = (len(obj)/2) + (len(obj) % 2)
